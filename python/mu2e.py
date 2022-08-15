@@ -1553,7 +1553,10 @@ def readint(data):
     itab = edata['isotopes']
     icnt = len(edata['isotopes'].keys()) # isotope dict size, range of idx
     data['isotopeme'] = dict()
+    iso = data['Isotope']
     for a, idata in itab.items(): # a is nucleon count, idata is isotope data
+        if iso and iso != a:
+            continue
         idx = idata['idx']
         erstr = edata['symbol'] + str(a) + "_" + intstr + ".txt"
         intfile = elasticDir / erstr

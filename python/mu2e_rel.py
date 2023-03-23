@@ -3,7 +3,7 @@
 # Ken McElvain   16June2022
 #
 # Update for lower components 28Nov2022
-# Left off at fgAvgA
+# Relativistic version
 #
 # Need to write Mathematica code to generate python test code.
 #

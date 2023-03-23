@@ -28,7 +28,7 @@ parser.add_argument("-v", action="store_true", help="Enable more logging")
 parser.add_argument("-pelements", action="store_true", help="Report element/isotope data")
 elasticenvname = "MU2E_ELASTIC"
 if elasticenvname in os.environ:
-    elasticdirdflt = os.environ[srenvname]
+    elasticdirdflt = os.environ[elasticenvname]
 else:
     elasticdirdflt = "../../Elastic"
 parser.add_argument("-edir", action="store", type=str, default=elasticdirdflt,
@@ -1949,7 +1949,7 @@ def plotspindep(data):
 #
 def expandcsds(data):
     cs = np.zeros((17, 2), dtype=np.complex128) 
-    ds = np.zeros((21, 2))
+    ds = np.zeros((21, 2), dtype=np.complex128)
     if 'cs' in data:
         for ce in data['cs']:
             idx, isoscalar, isovector = (ce)
@@ -1957,7 +1957,7 @@ def expandcsds(data):
                 raise ValueError(f"cs index value out of bounds 1..16, got {idx}")
             cs[idx, 0] = isoscalar
             cs[idx, 1] = isovector
-        data['origcs'] = data['cs']
+        data['origcs'] = data['cs'].copy()
         data['cs'] = cs
     else:
         print("No non-relativistic LECs (cs entry) in input data")
@@ -1968,11 +1968,12 @@ def expandcsds(data):
                 raise ValueError(f"ds index value out of bounds 1..20, got {idx}")
             ds[idx, 0] = isoscalar
             ds[idx, 1] = isovector
-        data['origds'] = data['ds']
+        data['origds'] = data['ds'].copy()
         data['ds'] = ds
     else:
         print("No relativistic coefficients (ds entry) in input data")
 
+# Correct cs coefficients for muon momentum and leptonic scale mL
 def relativistic_cs(data):
     I = 0+1.0j
     cs = data['cs']

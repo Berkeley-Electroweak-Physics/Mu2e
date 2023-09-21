@@ -5,7 +5,7 @@ This mathematica script can be used to perform calculations for muon to electron
 
 *Atomic and Nuclear Physics Input*: The atomic input is derived from solving the Dirac equation in the nuclear Coulomb field, using the nuclear charge density profile described in the text; the parameters c and β were either taken directly from Ref. [55] or fit to the alternative density profiles provided in that
 reference. The density profiles were determined from fits to elastic electron scattering and thus are consistent with the known charge radii of the targets. Table XI gives for each target the values of c and β we employed, as well as the resulting r.m.s. charge radius, the muon binding energy, the muon lower-
-component probability, the computed Zeff that relates the muon wave function (averaged over the nuclear density, weighted by $j_0(qr)$) to the point Schr&#246;dinger density at the origin, the equivalent reduction factor R, the three-momentum transfer q,
+component probability, the computed Zeff that relates the muon wave function (averaged over the nuclear density, weighted by $j_0(qr)$ ) to the point Schr&#246;dinger density at the origin, the equivalent reduction factor R, the three-momentum transfer q,
 and the computed q . The values for $E_{binding}$, $Z_{eff}$, $\mu_{eff}$
 and $q_{eff}$ are embedded in the script. The atomic physics is evaluated for the principal isotope indicated in the Table, then used for all contributing isotopes.
 
@@ -34,18 +34,18 @@ The final output of the script is the μ → e conversion rate in 1/sec.
 |-----------|------------|----------------|-------------------------------------|-------------------------------|---------------------------------|-------|------------------------|-----------|-----------|------------------------|
 | ~Nucleus~ | $c$ (fm) | $\beta$ (fm) | $\sqrt{\langle r^2 \rangle}$(fm) | $E_\mu^\mathrm{bind}$ (MeV) |$\int_{0}^{\infty} \|F_{1s}\|^2 dr$ | Z | $Z_\mathrm{eff}$ | R | $q$ (MeV) | $q_\mathrm{eff}$ (MeV) |
 |           |            |                |                                     |                               |                                 |       |                        |           |           |                        |
-| $^{12}$C  | 2.215      | 0.491          | 2.505                               | 0.1000                        | 0.00047                         | 6     | 5.7030                 | 0.8587    | 105.07    | 108.40                 |
-| $^{16}$O  | 2.534      | 0.514          | 2.739                               | 0.1775                        | 0.00083                         | 8     | 7.4210                 | 0.7982    | 105.11    | 109.16                 |
-| $^{19}$F  | 2.580      | 0.567          | 2.904                               | 0.2242                        | 0.00104                         | 9     | 8.2298                 | 0.7646    | 105.12    | 109.44                 |
-| $^{23}$Na | 2.760      | 0.543          | 2.940                               | 0.3337                        | 0.00154                         | 11    | 9.8547                 | 0.7190    | 105.07    | 110.25                 |
-| $^{27}$Al | 3.070      | 0.519          | 3.062                               | 0.4630                        | 0.00211                         | 13    | 11.3086                | 0.6583    | 104.98    | 110.81                 |
-| $^{28}$Si | 3.140      | 0.537          | 3.146                               | 0.5346                        | 0.00241                         | 14    | 12.0009                | 0.6299    | 104.91    | 111.03                 |
-| $^{32}$S  | 3.161      | 0.578          | 3.239                               | 0.6924                        | 0.00308                         | 16    | 13.1839                | 0.5595    | 104.78    | 111.56                 |
-| $^{40}$Ca | 3.621      | 0.563          | 3.499                               | 1.0585                        | 0.00453                         | 20    | 15.6916                | 0.4830    | 104.45    | 112.28                 |
-| $^{48}$Ti | 3.843      | 0.588          | 3.693                               | 1.2615                        | 0.00527                         | 22    | 16.6562                | 0.4340    | 104.28    | 112.43                 |
-| $^{56}$Fe | 4.111      | 0.558          | 3.800                               | 1.7182                        | 0.00690                         | 26    | 18.6028                | 0.3663    | 103.84    | 113.16                 |
-| $^{63}$Cu | 4.218      | 0.596          | 3.947                               | 2.0884                        | 0.00811                         | 29    | 19.8563                | 0.3210    | 103.48    | 113.50                 |
-| $^{184}$W | 6.510      | 0.535          | 5.421                               | 9.0851                        | 0.01169                         | 74    | 32.2914                | 0.0831    | 96.54     | 114.95                 |
+| $^{12}\textrm{C}$  | 2.215      | 0.491          | 2.505                               | 0.1000                        | 0.00047                         | 6     | 5.7030                 | 0.8587    | 105.07    | 108.40                 |
+| $^{16}\textrm{O}$  | 2.534      | 0.514          | 2.739                               | 0.1775                        | 0.00083                         | 8     | 7.4210                 | 0.7982    | 105.11    | 109.16                 |
+| $^{19}\textrm{F}$  | 2.580      | 0.567          | 2.904                               | 0.2242                        | 0.00104                         | 9     | 8.2298                 | 0.7646    | 105.12    | 109.44                 |
+| $^{23}\textrm{Na}$ | 2.760      | 0.543          | 2.940                               | 0.3337                        | 0.00154                         | 11    | 9.8547                 | 0.7190    | 105.07    | 110.25                 |
+| $^{27}\textrm{Al}$ | 3.070      | 0.519          | 3.062                               | 0.4630                        | 0.00211                         | 13    | 11.3086                | 0.6583    | 104.98    | 110.81                 |
+| $^{28}\textrm{Si}$ | 3.140      | 0.537          | 3.146                               | 0.5346                        | 0.00241                         | 14    | 12.0009                | 0.6299    | 104.91    | 111.03                 |
+| $^{32}\textrm{S}$  | 3.161      | 0.578          | 3.239                               | 0.6924                        | 0.00308                         | 16    | 13.1839                | 0.5595    | 104.78    | 111.56                 |
+| $^{40}\textrm{Ca}$ | 3.621      | 0.563          | 3.499                               | 1.0585                        | 0.00453                         | 20    | 15.6916                | 0.4830    | 104.45    | 112.28                 |
+| $^{48}\textrm{Ti}$ | 3.843      | 0.588          | 3.693                               | 1.2615                        | 0.00527                         | 22    | 16.6562                | 0.4340    | 104.28    | 112.43                 |
+| $^{56}\textrm{Fe}$ | 4.111      | 0.558          | 3.800                               | 1.7182                        | 0.00690                         | 26    | 18.6028                | 0.3663    | 103.84    | 113.16                 |
+| $^{63}\textrm{Cu}$ | 4.218      | 0.596          | 3.947                               | 2.0884                        | 0.00811                         | 29    | 19.8563                | 0.3210    | 103.48    | 113.50                 |
+| $^{184}\textrm{W}$ | 6.510      | 0.535          | 5.421                               | 9.0851                        | 0.01169                         | 74    | 32.2914                | 0.0831    | 96.54     | 114.95                 |
 
 
 
